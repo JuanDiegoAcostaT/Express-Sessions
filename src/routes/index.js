@@ -8,12 +8,13 @@ router.get('/', (req, res) => {
 
 
 router.post('/register', (req, res) => {
-
+    console.log(req.body);
+    res.send('received')
 })
 
 
 router.get('/profile', (req, res, next) => {
-    
+
 })
 
 module.exports = router;

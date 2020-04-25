@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 
 // Settings
@@ -17,6 +18,7 @@ app.use(session({
     resave : false,
     secret : 'secretKey'
 }))
+app.use(flash());
 
 // Routes
 app.use(require('./routes/index'))

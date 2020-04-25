@@ -7,4 +7,13 @@ router.get('/', (req, res) => {
 })
 
 
+router.post('/register', (req, res) => {
+
+})
+
+
+router.get('/profile', (req, res, next) => {
+    
+})
+
 module.exports = router;

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 
 
 // Settings
@@ -11,10 +12,15 @@ app.set('view engine', 'ejs');
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
-
+app.use(session({
+    saveUninitialized : false,
+    resave : false,
+    secret : 'secretKey'
+}))
 
 // Routes
 app.use(require('./routes/index'))
+
 
 
 // Static Files
